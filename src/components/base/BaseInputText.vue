@@ -45,12 +45,6 @@ export default {
       model: this.value,
       errorx: this.error
     }
-  },
-
-  watch: {
-    error (val, www) {
-      console.warn(val, www)
-    }
   }
 }
 </script>

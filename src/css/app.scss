@@ -1,6 +1,10 @@
 // app global css in SCSS form
 @import 'fluid-typography';
 
+body {
+  background-color: whitesmoke;
+}
+
 // custom colors
 .text-white {
   color: $white;
@@ -8,6 +12,22 @@
 
 .bg-white {
   background: $white;
+}
+
+.text-primary-dark {
+  color: #303F9F;
+}
+
+.bg-primary-dark {
+  background: #303F9F;
+}
+
+.text-primary-light {
+  color: #C5CAE9;
+}
+
+.bg-primary-light {
+  background: #C5CAE9;
 }
 
 .text-shadow {
@@ -21,6 +41,15 @@
   button div div::before {
     content: "\2716";
   }
+}
+
+.q-notification__message {
+  font-size: 1rem;
+}
+
+.line-height-3 {
+  line-height: 3rem;
+  // top: 6.125rem;
 }
 
 // page transitions

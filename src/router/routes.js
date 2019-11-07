@@ -1,5 +1,6 @@
 import homePage from './pages/home'
 import aboutPage from './pages/about'
+import dashboardPage from './pages/dashboard'
 
 const routes = [
   {
@@ -7,7 +8,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       homePage, //
-      aboutPage
+      aboutPage,
+      dashboardPage
     ]
   }
 ]

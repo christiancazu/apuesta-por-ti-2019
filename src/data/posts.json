@@ -1,0 +1,39 @@
+[
+  {
+    "type": "requisitoriado",
+    "avatarOwner": "https://cdn.quasar.dev/img/parallax1.jpg",
+    "nameOwner": "PollerBoy",
+    "day": "Dom 14",
+    "hour": "13:55 PM",
+    "views": 5,
+    "comments": 16,
+    "hasView": false,
+    "rating": 3,
+    "title": "any title",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.",
+    "images": [
+      { "name": "1", "src": "https://cdn.quasar.dev/img/parallax1.jpg" },
+      { "name": "2", "src": "https://cdn.quasar.dev/img/parallax1.jpg" },
+      { "name": "3", "src": "https://cdn.quasar.dev/img/parallax1.jpg" }
+    ],
+    "slide": "1"
+  },
+  {
+    "type": "perdido",
+    "avatarOwner": "https://cdn.quasar.dev/img/parallax1.jpg",
+    "nameOwner": "PollerBoy",
+    "day": "Dom 14",
+    "hour": "13:55 PM",
+    "views": 15,
+    "comments": 26,
+    "hasView": false,
+    "title": "any title",
+    "rating": 2,
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.",
+    "images": [
+      { "name": "1", "src": "https://cdn.quasar.dev/img/parallax1.jpg" },
+      { "name": "2", "src": "https://cdn.quasar.dev/img/parallax1.jpg" }
+    ],
+    "slide": "1"
+  }
+]

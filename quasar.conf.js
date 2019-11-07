@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable array-bracket-newline */
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
@@ -46,7 +47,7 @@ module.exports = function (ctx) {
       //            (fastest compile time; minimum bundle size; most tedious)
       // * true   - Import everything from Quasar
       //            (not treeshaking Quasar; biggest bundle size; convenient)
-      all: false,
+      all: true,
 
       components: [
         'QAvatar',
@@ -108,7 +109,7 @@ module.exports = function (ctx) {
     build: {
       env: envparser(), // build function to load environment variables
       scopeHoisting: true,
-      vueRouterMode: 'history',
+      // vueRouterMode: 'history',
       // showProgress: false,
       // gzip: true,
       // analyze: true,

@@ -8,7 +8,7 @@
       { 'elevated-on-scroll-up': elevatedOnScrollUp,
         'bg-transparent': !elevatedOnScrollDown
       },
-      [`row justify-center`, 'text-shadow']
+      [`row justify-center`, 'text-shadow', 'bg-primary-dark']
     ]"
   >
     <q-toolbar class="col-md-10">
