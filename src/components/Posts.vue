@@ -36,10 +36,10 @@
         :icon="post.type === 'requisitoriado' ? 'face' : 'search'"
         :color="post.type === 'requisitoriado' ? 'info': 'warning'"
         text-color="white"
-        class="col justify-around"
+        class="col justify-around q-mr-md"
       >
         <div
-          class="mx-auto q-ml-none"
+          class="q-ml-none"
           :class="{'q-mr-md': post.type !== 'requisitoriado' }"
         >
           {{ post.type }}

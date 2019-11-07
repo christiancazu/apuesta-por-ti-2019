@@ -6,10 +6,10 @@
   >
     <q-btn
       v-for="(btn, index) in btns" :key="index"
-      color="primary"
       :label="btn.label"
-      stack
       :icon="btn.icon"
+      color="primary"
+      stack
     />
   </q-btn-group>
 </div>
