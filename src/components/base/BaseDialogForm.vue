@@ -110,6 +110,11 @@ export default {
           }
         } else {
           localStorage.setItem('user', JSON.stringify(this.form))
+          Notify.create({
+            message: 'El usuario se ha registrado',
+            color: 'positive',
+            icon: 'check_circle'
+          })
         }
         // catch (error) {}
         this.$store.commit('spinners/DISABLE_PROCESSING_FORM')

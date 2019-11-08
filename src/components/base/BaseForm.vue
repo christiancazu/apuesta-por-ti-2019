@@ -99,7 +99,8 @@ export default {
     ...mapState('errors', ['formErrors']),
     ...mapState('auth', ['user']),
     userFullName () {
-      return this.$store.state.auth.user.names + " " + this.$store.state.auth.user.surnames
+      const { names, surnames } = JSON.parse(localStorage.getItem('user'))
+      return names + " " + surnames
     }
   },
 
