@@ -19,9 +19,9 @@
 export default {
   data: () => ({
     btns: [
-      { icon: 'timeline', label: 'one', link: '' },
-      { icon: 'visibility', label: 'two', link: '' },
-      { icon: 'update', label: 'tree', link: '' }
+      { icon: 'account_box', label: 'perfil', link: '' },
+      { icon: 'mail', label: 'bandeja', link: '' },
+      { icon: 'star_half', label: 'valoración', link: '' }
     ]
   })
 }

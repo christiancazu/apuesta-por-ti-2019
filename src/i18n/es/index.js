@@ -9,6 +9,9 @@ export default {
     tooManyRequest: 'Se han realizado demasiadas solicitudes'
   },
   home: 'inicio',
+  img: {
+    upload: 'subir imagen'
+  },
   login: {
     again: 'Vuelva a iniciar sesión',
     default: 'Iniciar sesión',
@@ -17,13 +20,13 @@ export default {
   },
   logout: {
     default: 'salir',
-    success: 'Ha cerrado sesión correctamente'
+    successful: 'Ha cerrado sesión correctamente'
   },
   mentoringSystem: 'Sistema de recomendaciones',
   names: 'nombres',
   password: 'contraseña',
   passwordConfirm: 'confirmar contraseña',
-  register: {
+  registered: {
     successful: 'Se ha registrado correctamente'
   },
   success: 'La acción fue exitosa',

@@ -82,16 +82,36 @@ export default {
     async onSubmit () {
       if (await this.$_validateFormMixin_isValid()) {
         this.$store.commit('spinners/ENABLE_PROCESSING_FORM')
-        try {
-          await this.$store.dispatch(`${this.storeBase}/${this.storeAction}`, this.form)
-          Notify.create({
-            message: this.$t(`${this.messageToastBaseName}.${this.messageToastAction}`),
-            color: 'positive',
-            icon: 'check_circle'
-          })
-          this.$emit('response-success')
+        // try {
+        //   await this.$store.dispatch(`${this.storeBase}/${this.storeAction}`, this.form)
+        //   Notify.create({
+        //     message: this.$t(`${this.messageToastBaseName}.${this.messageToastAction}`),
+        //     color: 'positive',
+        //     icon: 'check_circle'
+        //   })
+        //   this.$emit('response-success')
+        // }
+        if (this.storeAction === 'signIn') {
+          const { email, password } = JSON.parse(localStorage.getItem('user'))
+          if (this.form.email === email && this.form.password === password) {
+            Notify.create({
+              message: this.$t(`${this.messageToastBaseName}.${this.messageToastAction}`),
+              color: 'positive',
+              icon: 'check_circle'
+            })
+            this.$store.commit('auth/SET_USER', this.form)
+            this.$emit('response-success')
+          } else {
+            Notify.create({
+              message: this.$t(`error.invalidData`),
+              color: 'negative',
+              icon: 'error'
+            })
+          }
+        } else {
+          localStorage.setItem('user', JSON.stringify(this.form))
         }
-        catch (error) {}
+        // catch (error) {}
         this.$store.commit('spinners/DISABLE_PROCESSING_FORM')
       }
     },

@@ -69,10 +69,11 @@
           :name="postImage.name"
           class="column no-wrap flex-center"
         >
-          <q-parallax
+          <q-img
             :src="postImage.src"
+            class="image-res"
           >
-          </q-parallax>
+          </q-img>
         </q-carousel-slide>
       </q-carousel>
     </q-card-section>
@@ -172,5 +173,10 @@ export default {
 }
 .q-btn-group {
   box-shadow: none
+}
+.img-res {
+  max-width: 50%;
+    height: 5%;
+    object-fit: contain
 }
 </style>

@@ -2,7 +2,7 @@ import authService from 'src/services/auth.service'
 import jwtService from 'src/services/jwt.service'
 
 export const state = {
-  user: null,
+  user: JSON.parse(localStorage.getItem('user')),
   token: jwtService.getToken(),
   userStateInToolbar: false
 }

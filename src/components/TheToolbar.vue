@@ -30,11 +30,11 @@
       >
         <q-avatar color="white">
           <img
-            src="statics/logo.png"
+            src="statics/logo.gif"
             class="img-logo"
           >
         </q-avatar>
-        <span class="q-mx-sm">{{ $t('tutorship') }}</span>
+        <span class="q-mx-sm">FACE FINDER</span>
       </q-btn>
 
       <q-space />
@@ -139,7 +139,7 @@ export default {
 
   data () {
     return {
-      navs: ['about'],
+      navs: [],
       dialogs: [
         { name: 'signIn', stateName: 'dialogSignIn' },
         { name: 'signUp', stateName: 'dialogSignUp' }

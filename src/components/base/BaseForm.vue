@@ -1,6 +1,6 @@
 <template>
 <div>
-  <q-card class="q-my-lg q-mx-xs-sm">
+  <q-card class="q-my-xl q-mx-xs-sm">
     <q-card-section>
       <div class="text-h6 text-center text-secondary">
         {{ dialogFormTitle }}
@@ -39,6 +39,8 @@
           </template>
         </q-input>
 
+        <slot />
+
         <base-btn-submit :btn-submit-label="btnSubmitLabel" />
 
       </q-form>
@@ -57,6 +59,9 @@
       :to="{ name: 'dashboard' }"
     />
   </q-page-sticky>
+  <div class="row">
+    <p class="text-break col">{{ fff }}</p>
+  </div>
 </div>
 </template>
 
@@ -79,12 +84,29 @@ export default {
     messageToastBaseName: { type: String, required: true },
     messageToastAction: { type: String, required: true },
     storeBase:{ type: String, required: true },
-    storeAction: { type: String, required: true }
+    storeAction: { type: String, required: true },
+    images: { type: Array, default: () => [] },
 
   },
 
+  data () {
+    return {
+      fff: ''
+    }
+  },
+
   computed: {
-    ...mapState('errors', ['formErrors'])
+    ...mapState('errors', ['formErrors']),
+    ...mapState('auth', ['user']),
+    userFullName () {
+      return this.$store.state.auth.user.names + " " + this.$store.state.auth.user.surnames
+    }
+  },
+
+  watch: {
+    images (v) {
+      this.images = v
+    }
   },
 
   methods: {
@@ -92,21 +114,50 @@ export default {
 
     async onSubmit () {
       if (await this.$_validateFormMixin_isValid()) {
-        this.$store.commit('spinners/ENABLE_PROCESSING_FORM')
-        try {
-          await this.$store.dispatch(`${this.storeBase}/${this.storeAction}`, this.form)
-          Notify.create({
-            message: this.$t(`${this.messageToastBaseName}.${this.messageToastAction}`),
-            color: 'positive',
-            icon: 'check_circle'
-          })
-          this.$emit('response-success')
+        // this.$store.commit('spinners/ENABLE_PROCESSING_FORM')
+        // try {
+        // await this.$store.dispatch(`${this.storeBase}/${this.storeAction}`, this.form)
+        // console.warn(this.form)
+        const fff = {
+          type: "perdido",
+          avatarOwner: `fallBack`,
+          nameOwner: this.userFullName,
+          day: this.form.dia,
+          hour: this.form.hora,
+          views: 0,
+          comments: 0,
+          hasView: false,
+          rating: 0,
+          title: this.form.nombre,
+          description: this.form.descripcion,
+          images: this.resolveImages(),
+          slide: "1"
         }
-        catch (error) {}
-        this.$store.commit('spinners/DISABLE_PROCESSING_FORM')
+
+        this.$store.commit('posts/ADD_NEW_POST', fff)
+
+        Notify.create({
+          message: this.$t(`${this.messageToastBaseName}.${this.messageToastAction}`),
+          color: 'positive',
+          icon: 'check_circle'
+        })
+        // this.$emit('response-success')
       }
+      // catch (error) {}
+      // this.$store.commit('spinners/DISABLE_PROCESSING_FORM')
     },
-  }
+
+    resolveImages () {
+      const imgs = this.images.filter(i => i !== null)
+      return imgs.map((img, i) => ({name: (i+1), src: img }))
+    }
+  },
 }
 </script>
 
+<style>
+.text-break {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+</style>

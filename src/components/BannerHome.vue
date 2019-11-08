@@ -18,7 +18,7 @@
           class="container-home-text-center"
         >
           <h3 class="text-uppercase">
-            {{ $t('tutorship') }}
+            FALCON FACE FINDER
           </h3>
         </div>
       </transition>
@@ -28,7 +28,7 @@
           class="container-home-text-center"
         >
           <h4>
-            {{ $t('mentoringSystem') }}
+            Sistema de busqueda de personas
           </h4>
         </div>
       </transition>

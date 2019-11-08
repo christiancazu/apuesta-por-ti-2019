@@ -9,6 +9,9 @@ export default {
     tooManyRequest: 'Too many requests have been made'
   },
   home: 'home',
+  img: {
+    upload: 'upload image'
+  },
   login: {
     again: 'Sign in again',
     default: 'Log in',
