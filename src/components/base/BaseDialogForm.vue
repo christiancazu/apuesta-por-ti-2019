@@ -40,6 +40,8 @@
           </template>
         </q-input>
 
+        <slot />
+
         <base-btn-submit :btn-submit-label="btnSubmitLabel" />
 
       </q-form>

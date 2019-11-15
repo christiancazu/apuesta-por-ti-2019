@@ -10,7 +10,42 @@
   :message-toast-action="messageToastAction"
   :store-base="storeBase"
   :store-action="storeAction"
-/>
+>
+  <div class="row q-my-md">
+    <q-btn
+      class="col"
+      color="blue"
+      push
+    >
+      <div class="row items-center no-wrap">
+        <q-avatar size="1.5rem">
+          <img
+            src="statics/social/fb.jpg"
+          >
+        </q-avatar>
+        <div class="text-center q-px-sm">
+          Facebook
+        </div>
+      </div>
+    </q-btn>
+    <q-btn
+      class="col"
+      color="primary-outline"
+      push
+    >
+      <div class="row items-center no-wrap">
+        <q-avatar size="1.5rem">
+          <img
+            src="statics/social/twitter.png"
+          >
+        </q-avatar>
+        <div class="text-center q-px-sm text-cyan">
+          Twitter
+        </div>
+      </div>
+    </q-btn>
+  </div>
+</base-dialog-form>
 </template>
 
 <script>
@@ -51,4 +86,3 @@ export default {
   },
 }
 </script>
-

@@ -206,6 +206,7 @@ export default {
     },
 
     logout () {
+      localStorage.removeItem('user')
       this.$store.commit('auth/PURGE_AUTH')
       this.$router.push({ name: 'home' })
       Notify.create({

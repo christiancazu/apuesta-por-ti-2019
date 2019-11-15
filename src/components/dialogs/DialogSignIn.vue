@@ -1,17 +1,20 @@
 <template>
-<base-dialog-form
-  :dialog-state-name="dialogStateName"
-  :form="form"
-  :form-rules="formRules"
-  :form-settings="formSettings"
-  :btn-submit-label="btnSubmitLabel"
-  :dialog-form-title="dialogFormTitle"
-  :message-toast-base-name="messageToastBaseName"
-  :message-toast-action="messageToastAction"
-  :store-base="storeBase"
-  :store-action="storeAction"
-  @response-success="responseSuccess"
-/>
+<div>
+  <base-dialog-form
+    :dialog-state-name="dialogStateName"
+    :form="form"
+    :form-rules="formRules"
+    :form-settings="formSettings"
+    :btn-submit-label="btnSubmitLabel"
+    :dialog-form-title="dialogFormTitle"
+    :message-toast-base-name="messageToastBaseName"
+    :message-toast-action="messageToastAction"
+    :store-base="storeBase"
+    :store-action="storeAction"
+    @response-success="responseSuccess"
+  >
+  </base-dialog-form>
+</div>
 </template>
 
 <script>
